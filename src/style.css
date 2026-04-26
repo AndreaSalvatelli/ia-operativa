@@ -598,3 +598,20 @@ input {
     width: 100%;
   }
 }
+
+.tallyButton {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 999px;
+  background: #d9f99d;
+  color: #171717;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.tallyButton:hover {
+  background: #bef264;
+}
