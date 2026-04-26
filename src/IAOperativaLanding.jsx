@@ -1,4 +1,5 @@
 import React from "react";
+const TALLY_FORM_URL = "https://tally.so/r/WOeKEa";
 
 function Icon({ type }) {
   const icons = {
@@ -71,8 +72,8 @@ export default function IAOperativaLanding() {
           <a href="#newsletter">Newsletter</a>
         </nav>
 
-        <a className="headerCta" href="#newsletter">
-          Iscriviti
+        <a className="headerCta" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
+  Iscriviti
         </a>
       </header>
 
@@ -93,7 +94,7 @@ export default function IAOperativaLanding() {
             </p>
 
             <div className="heroActions">
-              <a className="primaryButton" href="#newsletter">
+             <a className="primaryButton" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
                 Ricevi le novità AI <Icon type="arrow" />
               </a>
               <a className="secondaryButton" href="#cosa">
@@ -214,10 +215,11 @@ export default function IAOperativaLanding() {
               al lavoro aziendale. Pochi contenuti, scelti bene.
             </p>
 
-            <form className="newsletterForm">
-              <input type="email" placeholder="La tua email" />
-              <button type="button">Iscriviti</button>
-            </form>
+            <div className="newsletterForm">
+              <a className="tallyButton" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
+               Iscriviti al Radar IA Operativa
+              </a>
+            </div>
 
             <div className="privacy">
               <Icon type="shield" />
