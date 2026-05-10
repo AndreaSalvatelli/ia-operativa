@@ -96,12 +96,6 @@ input {
   line-height: 1;
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
 .brandName {
   display: block;
   font-weight: 800;
