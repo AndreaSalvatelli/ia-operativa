@@ -50,7 +50,6 @@ input {
   background: rgba(245, 242, 234, 0.88);
   backdrop-filter: blur(14px);
 }
-}
 
 .brand {
   display: flex;
