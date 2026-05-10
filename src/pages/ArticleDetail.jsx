@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { getArticleBySlug } from "../data/articles";
+import SiteHeader from "../components/SiteHeader";
 
 const TALLY_FORM_URL = "https://tally.so/r/WOeKEa";
 
@@ -7,7 +8,10 @@ export default function ArticleDetail({ slug }) {
   const article = useMemo(() => getArticleBySlug(slug), [slug]);
 
   if (!article) {
-    return (
+  return (
+    <>
+      <SiteHeader />
+
       <main className="blogPage">
         <div className="container">
           <article className="articleDetail notFound">
@@ -18,10 +22,14 @@ export default function ArticleDetail({ slug }) {
           </article>
         </div>
       </main>
-    );
-  }
+    </>
+  );
+}
 
-  return (
+return (
+  <>
+    <SiteHeader />
+
     <main className="blogPage">
       <div className="container">
         <article className="articleDetail">
@@ -41,10 +49,12 @@ export default function ArticleDetail({ slug }) {
           <div className="articleCta">
             <h2>Vuoi ricevere altri casi pratici come questo?</h2>
             <p>Iscriviti al Radar IA Operativa per ricevere aggiornamenti selezionati su strumenti, processi e applicazioni AI per PMI.</p>
-            <a className="primaryButton" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">Iscriviti al Radar IA Operativa</a>
+            <a className="primaryButton" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
+              Iscriviti al Radar IA Operativa
+            </a>
           </div>
         </article>
       </div>
     </main>
-  );
-}
+  </>
+);
