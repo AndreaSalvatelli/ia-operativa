@@ -615,3 +615,120 @@ input {
 .tallyButton:hover {
   background: #bef264;
 }
+
+/* Blog */
+.blogPage {
+  min-height: 100vh;
+  background: #f6f8fb;
+  padding: 120px 0 72px;
+}
+
+.blogHeader {
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.blogEyebrow {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #5d6b88;
+  margin-bottom: 8px;
+}
+
+.blogHeader h1,
+.articleDetail h1 {
+  margin: 0 0 12px;
+  color: #1a2233;
+}
+
+.blogHeader p,
+.articleDetail p {
+  color: #42506c;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.blogCard {
+  background: #fff;
+  border: 1px solid #e5e9f3;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(12, 20, 36, 0.06);
+}
+
+.blogMeta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: #5d6b88;
+  margin-bottom: 10px;
+}
+
+.blogCard h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.blogCard h2 a {
+  color: #1f2a44;
+  text-decoration: none;
+}
+
+.blogCard h2 a:hover,
+.blogReadMore:hover {
+  text-decoration: underline;
+}
+
+.blogReadMore {
+  color: #31467a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.articleDetail {
+  background: #fff;
+  border: 1px solid #e5e9f3;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.articleExcerpt {
+  font-size: 1.05rem;
+  border-left: 3px solid #8ea2d7;
+  padding-left: 14px;
+  margin: 14px 0 22px;
+}
+
+.articleContent p {
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.articleCta {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e9f3;
+}
+
+.notFound {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .blogPage {
+    padding-top: 100px;
+  }
+
+  .articleDetail {
+    padding: 24px;
+  }
+}
