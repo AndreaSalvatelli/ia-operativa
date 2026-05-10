@@ -47,8 +47,20 @@ input {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  background: transparent;
+  isolation: isolate;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   background: rgba(245, 242, 234, 0.88);
   backdrop-filter: blur(14px);
+  z-index: -1;
 }
 
 .brand {
