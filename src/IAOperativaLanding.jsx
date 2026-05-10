@@ -1,3 +1,4 @@
+import SiteHeader from "./components/SiteHeader";
 import React from "react";
 const TALLY_FORM_URL = "https://tally.so/r/WOeKEa";
 
@@ -53,30 +54,9 @@ export default function IAOperativaLanding() {
     "Formare il team a usare l’AI in modo pratico e sicuro",
   ];
 
-  return (
-    <div className="page">
-      <header className="header">
-        <div className="brand">
-          <div className="brandIcon">
-            <Icon type="sparkles" />
-          </div>
-          <div>
-            <div className="brandName">IA Operativa</div>
-            <div className="brandTagline">Intelligenza artificiale applicata</div>
-          </div>
-        </div>
-
-        <nav className="nav">
-          <a href="#cosa">Cosa trovi</a>
-          <a href="#metodo">Metodo</a>
-          <a href="#newsletter">Newsletter</a>
-          <a href="/blog">Blog</a>
-        </nav>
-
-        <a className="headerCta" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
-  Iscriviti
-        </a>
-      </header>
+return (
+  <div className="page">
+    <SiteHeader />
 
       <main>
         <section className="hero">
