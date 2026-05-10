@@ -70,6 +70,7 @@ export default function IAOperativaLanding() {
           <a href="#cosa">Cosa trovi</a>
           <a href="#metodo">Metodo</a>
           <a href="#newsletter">Newsletter</a>
+          <a href="/blog">Blog</a>
         </nav>
 
         <a className="headerCta" href={TALLY_FORM_URL} target="_blank" rel="noreferrer">
