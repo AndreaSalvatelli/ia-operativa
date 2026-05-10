@@ -5,6 +5,35 @@ export default function SiteHeader() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const goToHomeSection = (sectionId) => (event) => {
+    event.preventDefault();
+    closeMenu();
+
+    const targetUrl = `/#${sectionId}`;
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(sectionId);
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    if (window.location.pathname !== "/") {
+      window.history.pushState({}, "", targetUrl);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+
+      window.setTimeout(scrollToTarget, 120);
+      return;
+    }
+
+    window.history.pushState({}, "", `#${sectionId}`);
+    scrollToTarget();
+  };
+
   return (
     <header className="header">
       <a className="brand" href="/" onClick={closeMenu}>
@@ -19,13 +48,21 @@ export default function SiteHeader() {
       </a>
 
       <nav className="nav" aria-label="Navigazione principale">
-        <a href="/#cosa">Cosa trovi</a>
-        <a href="/#metodo">Metodo</a>
-        <a href="/#newsletter">Newsletter</a>
-        <a href="/blog">Blog</a>
+        <a href="/#cosa" onClick={goToHomeSection("cosa")}>
+          Cosa trovi
+        </a>
+        <a href="/#metodo" onClick={goToHomeSection("metodo")}>
+          Metodo
+        </a>
+        <a href="/#newsletter" onClick={goToHomeSection("newsletter")}>
+          Newsletter
+        </a>
+        <a href="/blog" onClick={closeMenu}>
+          Blog
+        </a>
       </nav>
 
-      <a className="headerCta" href="/#newsletter">
+      <a className="headerCta" href="/#newsletter" onClick={goToHomeSection("newsletter")}>
         Iscriviti
       </a>
 
@@ -43,11 +80,19 @@ export default function SiteHeader() {
 
       {isMenuOpen && (
         <nav className="mobileNav" aria-label="Navigazione mobile">
-          <a href="/#cosa" onClick={closeMenu}>Cosa trovi</a>
-          <a href="/#metodo" onClick={closeMenu}>Metodo</a>
-          <a href="/#newsletter" onClick={closeMenu}>Newsletter</a>
-          <a href="/blog" onClick={closeMenu}>Blog</a>
-          <a className="mobileNavCta" href="/#newsletter" onClick={closeMenu}>
+          <a href="/#cosa" onClick={goToHomeSection("cosa")}>
+            Cosa trovi
+          </a>
+          <a href="/#metodo" onClick={goToHomeSection("metodo")}>
+            Metodo
+          </a>
+          <a href="/#newsletter" onClick={goToHomeSection("newsletter")}>
+            Newsletter
+          </a>
+          <a href="/blog" onClick={closeMenu}>
+            Blog
+          </a>
+          <a className="mobileNavCta" href="/#newsletter" onClick={goToHomeSection("newsletter")}>
             Iscriviti
           </a>
         </nav>
