@@ -87,8 +87,13 @@ m
   line-height: 1;
 }
 
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .brandName {
-  display: block;
   font-weight: 800;
   font-size: 18px;
   letter-spacing: -0.03em;
@@ -96,8 +101,6 @@ m
 }
 
 .brandTagline {
-  display: block;
-  margin-top: 2px;
   color: #737373;
   font-size: 12px;
   line-height: 1.2;
