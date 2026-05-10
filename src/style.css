@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -35,13 +36,20 @@ input {
 }
 
 .header {
+  .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: min(100% - 48px, 1180px);
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 18px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  background: rgba(245, 242, 234, 0.88);
+  backdrop-filter: blur(14px);
+}
 }
 
 .brand {
@@ -290,6 +298,12 @@ input {
 
 .section {
   padding: 92px 0;
+}
+
+#cosa,
+#metodo,
+#newsletter {
+  scroll-margin-top: 110px;
 }
 
 .white {
