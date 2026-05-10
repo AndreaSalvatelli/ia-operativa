@@ -1,7 +1,13 @@
+import { useState } from "react";
+
 export default function SiteHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <header className="header">
-      <a className="brand" href="/">
+      <a className="brand" href="/" onClick={closeMenu}>
         <span className="brandIcon" aria-hidden="true">
           ✦
         </span>
@@ -22,6 +28,30 @@ export default function SiteHeader() {
       <a className="headerCta" href="/#newsletter">
         Iscriviti
       </a>
+
+      <button
+        className="mobileMenuButton"
+        type="button"
+        aria-label={isMenuOpen ? "Chiudi menu" : "Apri menu"}
+        aria-expanded={isMenuOpen}
+        onClick={() => setIsMenuOpen((current) => !current)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {isMenuOpen && (
+        <nav className="mobileNav" aria-label="Navigazione mobile">
+          <a href="/#cosa" onClick={closeMenu}>Cosa trovi</a>
+          <a href="/#metodo" onClick={closeMenu}>Metodo</a>
+          <a href="/#newsletter" onClick={closeMenu}>Newsletter</a>
+          <a href="/blog" onClick={closeMenu}>Blog</a>
+          <a className="mobileNavCta" href="/#newsletter" onClick={closeMenu}>
+            Iscriviti
+          </a>
+        </nav>
+      )}
     </header>
   );
 }
