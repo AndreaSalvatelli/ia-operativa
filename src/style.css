@@ -62,11 +62,20 @@ input {
   backdrop-filter: blur(14px);
   z-index: -1;
 }
-m
+
 .brand {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+}
+
+.brandCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .brandIcon {
@@ -94,6 +103,7 @@ m
 }
 
 .brandName {
+  display: block;
   font-weight: 800;
   font-size: 18px;
   letter-spacing: -0.03em;
@@ -101,6 +111,8 @@ m
 }
 
 .brandTagline {
+  display: block;
+  margin-top: 2px;
   color: #737373;
   font-size: 12px;
   line-height: 1.2;
